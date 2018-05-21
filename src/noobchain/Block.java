@@ -1,6 +1,10 @@
 package noobchain;
 
 import java.util.Date;
+import java.util.ArrayList;
+import com.google.gson.GsonBuilder;
+import java.security.*;
+import java.util.*;
 
 public class Block {
 
@@ -14,8 +18,7 @@ public class Block {
 		public Block(String data, String previousHash) {
 			this.data = data;
 			this.previousHash = previousHash;
-			this.timeStamp = new Date().getTime();
-			
+			this.timeStamp = new Date().getTime();		
 			this.hash = calculateHash(); //Making sure we do this after we set the other values
 		}
 		public String calculateHash() {
